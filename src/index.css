@@ -5,9 +5,117 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* the navbar element  */
+
+.navbarcont{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(166, 213, 244);
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 7px;
+}
+
+.navbutton{
+  margin-left: 200px;
+}
+.navtext h2{
+  color: rgb(36, 109, 211);
+  font-size: 30px
+}
+
+.newblog{
+  height:50px ;
+  width:110px;
+  background-color: rgb(36, 109, 211); 
+  border: 1px solid rgb(36, 109, 211);
+  color: #fff;
+  font-size:14px ;
+  font-weight:bold ;
+  border-radius: 20px
+}
+.homebutton{
+  height:50px ;
+  width:100px;
+  background-color: rgb(36, 109, 211); 
+  border: 1px solid rgb(36, 109, 211);
+  color: #fff;
+  font-size:14px ;
+  font-weight:bold ;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+/* add new blog page  */
+
+.new-blog{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  background-color: rgb(225, 231, 231);
+  width: 580px;
+  padding: 50px;
+  border-radius: 20px;
+}
+.new-blog-back{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.new-blog-back input{
+  height: 30px;
+  width: 300px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(225, 231, 231);
+}
+.new-blog-back button{
+  height: 40px;
+  width: 80px;
+  background-color:rgb(36, 109, 211);
+  border: 1px solid rgb(36, 109, 211);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+
+/* the blog post display page details */
+.blogpost{
+  margin-top: 50px;
+}
+.blogdetails{
+  background-color: rgb(225, 231, 231);
+  width:650px ;
+  padding-left: 20px;
+  padding-top: 3px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+.blogdetails p{
+  margin-top: -30px;
 }
