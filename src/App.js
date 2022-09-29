@@ -1,6 +1,7 @@
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Blogdetails from './components/Blogdetails';
 import Blogpost from './components/Blogpost';
 import Navbar from './components/Navbar';
 import Newblog from './components/Newblog';
@@ -30,6 +31,7 @@ function App() {
               </Route>
           </Switch>
         </div>
+       
       </div>
     </Router>
   );

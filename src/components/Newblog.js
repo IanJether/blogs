@@ -1,6 +1,6 @@
 import { db } from "../firebase/config";
 import {
-     collection,addDoc
+     collection,addDoc,serverTimestamp
   } from 'firebase/firestore';
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -30,7 +30,8 @@ const Newblog = () => {
             addDoc(colRef, {
                 Title: addBlogForm.Title.value,
                 Author: addBlogForm.Author.value,
-                Contents: addBlogForm.Contents.value
+                Contents: addBlogForm.Contents.value,
+                CreatedAt: serverTimestamp()
             })
             .then(()=>{
                 addBlogForm.reset()

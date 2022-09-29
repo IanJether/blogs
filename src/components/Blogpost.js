@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { db } from "../firebase/config"
 import {
-    getDocs,collection,onSnapshot
+    getDocs,collection,onSnapshot,orderBy,query
  } from 'firebase/firestore';
 
  
@@ -10,13 +10,16 @@ import {
          const colRef = collection(db, 'Blogs');
         
          const [posts,setPosts] = useState([]);
+         const[Blogid,setBlogid] = useState([]);
+
+         const q = query(colRef, orderBy('CreatedAt'))
         
             useEffect(()=>{
                         
-              onSnapshot(colRef, (snapshot) => {
+              onSnapshot(q, (snapshot) => {
                 let Blogs = []
                 snapshot.docs.forEach((doc) => {
-                    Blogs.push({...doc.data(),key: doc.id})
+                    Blogs.push({...doc.data(),id: doc.id})
                 })
                 console.log(Blogs)
                 setPosts(Blogs)
@@ -27,7 +30,7 @@ import {
         return (  
             <div className="blogpost">
                 {posts.map((post) => 
-                    <div key={post.id} className="blogdetails">
+                    <div id={post.id} className="blogdetails">
                         <h2>{post.Title}</h2> <br />
                         <p>Written by {post.Author}</p> <br />
                     </div>
