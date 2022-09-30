@@ -3,13 +3,14 @@ import {
     getFirestore
   } from 'firebase/firestore'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDA3FG5JcOA9LbX2ru8w9qXtzpQG5OEVX4",
-    authDomain: "blue-jether-blogs.firebaseapp.com",
-    projectId: "blue-jether-blogs",
-    storageBucket: "blue-jether-blogs.appspot.com",
-    messagingSenderId: "887732712890",
-    appId: "1:887732712890:web:250435aecc1a12c0d75983"
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBjsbckru4PFS9zqX4TdiKXKVFR04SfB2o",
+    authDomain: "correct-blogs.firebaseapp.com",
+    projectId: "correct-blogs",
+    storageBucket: "correct-blogs.appspot.com",
+    messagingSenderId: "898568466126",
+    appId: "1:898568466126:web:ac951629a09ae00f442a9f"
   };
 
      // init firebase

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { db } from "../firebase/config"
 import {
-    getDocs,collection,onSnapshot,orderBy,query
+    collection,onSnapshot,orderBy,query
  } from 'firebase/firestore';
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -15,7 +15,6 @@ import { Link, useHistory, useParams } from "react-router-dom";
         
          const [posts,setPosts] = useState([]);
         
-         const history = useHistory();
        
        
 

@@ -1,7 +1,8 @@
 import { onSnapshot, doc, deleteDoc } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useState } from "react";
+import {  Link,useHistory, useParams } from "react-router-dom";
 import { db } from "../firebase/config";
+
 
 
 
@@ -23,21 +24,25 @@ const Blogdetails = () => {
 
 
     
-    useEffect(()=>{
+    const handledelete = () =>{
+        
+        const docRef = doc(db, 'Blogs', `${id}`);
+        
+        deleteDoc(docRef)
+        .then(()=>{          
+              console.log('Deleted')
+            })
+    }
 
-        const deleteBook = document.querySelector('.delete');
-        deleteBook.addEventListener('click', (e) => {
-           
-            e.preventDefault();
 
-            const docRef = doc(db, 'Blogs', `${id}`);
+    // useEffect(()=>{
 
-            deleteDoc(docRef)
-                .then(()=>{
-                    history.push('/');
-                })
-        })
-       },[])
+    //     const deleteBook = document.querySelector('.delete');
+    //     deleteBook.addEventListener('click', (e) => {
+    //         e.preventDefault();
+            
+    //     })
+    //    },[])
 
     
 
@@ -52,8 +57,8 @@ const Blogdetails = () => {
             <div className="blogfallcontent">
                 <p>{idd.Contents}</p>
             </div>
-            <div className="delete">
-                <button>Delete Blog</button>
+            <div className="delete" onClick={handledelete}>
+                <Link to="/"><button>Delete Blog</button> </Link>
             </div>
         </div>
     );
