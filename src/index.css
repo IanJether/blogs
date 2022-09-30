@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
 }
 
 code {
@@ -37,6 +37,7 @@ code {
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 7px;
+  height: 130px;
 }
 
 .navbutton{
@@ -101,6 +102,7 @@ code {
   color: #fff;
   border-radius: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 
@@ -116,6 +118,47 @@ code {
   margin-bottom: 10px;
   border-radius: 20px;
 }
+.blogdetails h2{
+  cursor: pointer;
+  color: black;
+}
+.blogdetails p{
+  color: rgb(17, 90, 226);
+}
 .blogdetails p{
   margin-top: -30px;
+}
+
+
+
+/* the blog details page full  */
+
+.blogfall{
+  background-color: rgb(217, 235, 247);
+  padding: 20px;
+  margin-top: 20px;
+  width:660px;
+  border-radius: 20px;
+  padding-bottom: 30px;
+}
+.blogfalltitle{
+  display: flex;
+  justify-content: center;
+}
+.blogfalltitle h4{
+  font-size: 30px;
+}
+.blogfallcontent{
+  text-indent: 20px;
+}
+.delete button{
+  height: 50px;
+  width: 110px;
+  background-color:rgb(211, 36, 36);
+  border: 1px solid rgb(211, 36, 36);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 50px;
 }

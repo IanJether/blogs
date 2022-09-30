@@ -1,6 +1,6 @@
 
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
 import Blogdetails from './components/Blogdetails';
 import Blogpost from './components/Blogpost';
 import Navbar from './components/Navbar';
@@ -10,9 +10,8 @@ import Newblog from './components/Newblog';
 
 
 
+
 function App() {
-
-
 
  
   return (
@@ -26,12 +25,14 @@ function App() {
               <Route path='/Newblog'>
                   <Newblog/>
               </Route>
+              <Route path='/:id'>
+                  <Blogdetails/>
+              </Route>
               <Route path='/'>
                   <Blogpost/>
               </Route>
           </Switch>
         </div>
-       
       </div>
     </Router>
   );

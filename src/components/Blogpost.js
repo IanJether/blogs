@@ -3,6 +3,10 @@ import { db } from "../firebase/config"
 import {
     getDocs,collection,onSnapshot,orderBy,query
  } from 'firebase/firestore';
+import { Link, useHistory, useParams } from "react-router-dom";
+
+
+
 
  
  const Blogpost = () => {
@@ -10,7 +14,10 @@ import {
          const colRef = collection(db, 'Blogs');
         
          const [posts,setPosts] = useState([]);
-         const[Blogid,setBlogid] = useState([]);
+        
+         const history = useHistory();
+       
+       
 
          const q = query(colRef, orderBy('CreatedAt'))
         
@@ -21,19 +28,31 @@ import {
                 snapshot.docs.forEach((doc) => {
                     Blogs.push({...doc.data(),id: doc.id})
                 })
-                console.log(Blogs)
                 setPosts(Blogs)
                 })
             },[])
 
+        //   var slash = '/Newblog';
+        //     const handlered = (e) => {
+        //         e.preventDefault();
+        //         history.push(slash)
+        //     }
+
+        const linkStyle = {
+            textDecoration: "none",
+            color: 'rgb(36, 109, 211)'
+          };
+  
 
         return (  
             <div className="blogpost">
                 {posts.map((post) => 
-                    <div id={post.id} className="blogdetails">
+                <Link to={post.id} style={linkStyle}>
+                    <div  id={post.id} className="blogdetails">
                         <h2>{post.Title}</h2> <br />
                         <p>Written by {post.Author}</p> <br />
                     </div>
+                </Link>
                 )}
             </div>
         );
