@@ -86,7 +86,7 @@ code {
   justify-content: center;
   text-align: center;
 }
-.new-blog-back input{
+#input{
   height: 30px;
   width: 300px;
   margin-bottom: 20px;
@@ -103,6 +103,18 @@ code {
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+}
+#textarea{
+  height: 100px;
+  width: 290px;
+  border-radius: 10px;
+  border: 1px solid rgb(225, 231, 231);
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.remdisplay{
+  margin-bottom: 50px;
+  font-size: 12px;
 }
 
 

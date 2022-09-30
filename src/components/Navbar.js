@@ -18,7 +18,7 @@ const Navbar = () => {
                     <h2>Jether Blogs</h2>
                </div>
                <div className="navbutton">
-               <Link to="/Newblog" style={linkStyle}>  <button className="newblog"> New Blogs  </button> </Link>
+               <Link to="/Newblog" style={linkStyle}>  <button className="newblog"> New Blog  </button> </Link>
                <Link to="/" style={linkStyle}>   <button className="homebutton"> Home </button> </Link>
                </div>
             </div>

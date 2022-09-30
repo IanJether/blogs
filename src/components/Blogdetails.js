@@ -1,6 +1,6 @@
 import { onSnapshot, doc, deleteDoc } from "firebase/firestore";
 import { useState } from "react";
-import {  Link,useHistory, useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { db } from "../firebase/config";
 
 
@@ -15,7 +15,6 @@ const Blogdetails = () => {
 
     const docRef = doc(db, 'Blogs', `${id}`);
 
-    const history = useHistory();
 
 
     onSnapshot(docRef, (doc) => {

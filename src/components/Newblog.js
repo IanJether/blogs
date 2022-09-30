@@ -2,7 +2,7 @@ import { db } from "../firebase/config";
 import {
      collection,addDoc,serverTimestamp
   } from 'firebase/firestore';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
   
@@ -16,6 +16,11 @@ const Newblog = () => {
     const colRef = collection(db, 'Blogs');
 
     const history = useHistory();
+
+    const charLimit = 1200;
+
+    const [note,setNote] = useState('');
+
 
     // adding doc to database hopefully
     
@@ -65,18 +70,25 @@ const Newblog = () => {
                 <input type="text"
                     placeholder="Title"
                     required
-                    name="Title"     
+                    name="Title"
+                    id="input"     
                 /> <br />
                 <input type="text" 
                     placeholder="Author"
                     required
-                    name="Author"     
+                    name="Author"
+                    id="input"     
                 /> <br />
-                <input type="text" 
+                <textarea type="textarea" 
                     placeholder="Blog Contents"
                     required
-                    name="Contents"   
+                    name="Contents"
+                    id="textarea"
+                    onChange={(e)=>{setNote(e.target.value)}}   
                 /> <br />
+                <div className="remdisplay">
+                    <p>{charLimit- note.length} Characters Remaining</p>
+                </div>
                 <button>Add</button>
             </form>
           </div>
